@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Generator</title>
+    <style>
+        :root {
+            --primary-color: #4A6CF7;
+            --primary-dark: #2d4ed7;
+            --primary-light: #6b89f9;
+            --dark-color: #090E34;
+            --body-color: #959CB1;
+            --white: #ffffff;
+            --light-bg: #F4F7FF;
+            --text-color: #090E34;
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --border-color: #E9EDF4;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #6B89F9;
+            --primary-dark: #4A6CF7;
+            --primary-light: #8BA4FA;
+            --dark-color: #F4F7FF;
+            --body-color: #B4BCD0;
+            --white: #151823;
+            --light-bg: #151823;
+            --text-color: #FFFFFF;
+            --bg-color: #0B0F1A;
+            --card-bg: #1E2434;
+            --border-color: #2A3142;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard {
+            width: 1280px;
+            height: 800px;
+            margin: 20px;
+            background: var(--bg-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: var(--card-bg);
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            color: var(--body-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .card-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .card-label {
+            font-size: 14px;
+            color: var(--body-color);
+        }
+
+        .chart {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+            border-radius: 8px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to right,
+                transparent 0%,
+                transparent 10%,
+                rgba(255, 255, 255, 0.1) 10%,
+                rgba(255, 255, 255, 0.1) 20%
+            );
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-toggle {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .download {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: var(--text-color);
+            color: var(--bg-color);
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <div class="logo">SLGT Dashboard</div>
+            <div class="nav">
+                <a href="#" class="nav-item active">Overview</a>
+                <a href="#" class="nav-item">Analytics</a>
+                <a href="#" class="nav-item">Reports</a>
+                <a href="#" class="nav-item">Settings</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Total Revenue</div>
+                </div>
+                <div class="card-value">$124,563</div>
+                <div class="card-label">+12.5% from last month</div>
+                <div class="chart"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Active Users</div>
+                </div>
+                <div class="card-value">8,549</div>
+                <div class="card-label">+23.4% new users</div>
+                <div class="chart"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Conversion Rate</div>
+                </div>
+                <div class="card-value">64.7%</div>
+                <div class="card-label">+7.4% improvement</div>
+                <div class="chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+        <button class="download" onclick="downloadImage()">Download Image</button>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function toggleTheme() {
+            document.body.setAttribute('data-theme', 
+                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+            );
+        }
+
+        function downloadImage() {
+            const dashboard = document.querySelector('.dashboard');
+            html2canvas(dashboard).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `dashboard-${document.body.getAttribute('data-theme') || 'light'}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

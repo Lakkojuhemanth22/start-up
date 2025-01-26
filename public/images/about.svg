@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="546" height="413" viewBox="0 0 546 413" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <circle fill="#4A6CF7" cx="273" cy="206.5" r="206.5"/>
+        <rect fill="#E6E9F2" x="0" y="0" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="32" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="64" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="96" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="0" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="32" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="64" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="96" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="301" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="333" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="365" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="0" y="397" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="301" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="333" width="98" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="365" width="120" height="16" rx="8"/>
+        <rect fill="#E6E9F2" x="426" y="397" width="98" height="16" rx="8"/>
+    </g>
+</svg>
